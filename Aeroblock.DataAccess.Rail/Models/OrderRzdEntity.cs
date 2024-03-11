@@ -1,31 +1,45 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
+    [Table("order_rzds")]
+    //[Table("order_rzd")]
     public class OrderRzdEntity
     {
+        [Column("id")]
         public int Id { get; set; }
 
-        public DateTime Date { get; set; }
+        [Column("date")]
+        public DateOnly Date { get; set; }
 
+        [Column("costumer")]
         public string Costumer { get; set; }
 
+        [Column("material")]
         public string Material { get; set; }
 
-        public string Weight { get; set; }
+        [Column("weight_1")]
+        public string? Weight { get; set; } = string.Empty;
 
-        public int Col { get; set; }
+        [Column("col")]
+        public int? Col { get; set; } = 0;
 
-        public int SumWeight { get; set; }
+        [Column("sum_weight")]
+        public int? SumWeight { get; set; } = 0;
 
-        public int Fact { get; set; }
+        [Column("fact")]
+        public int? Fact { get; set; } = 0;
 
+        [Column("change_order")]
         public bool Order { get; set; }
 
+        [Column("old")]
         public string Old { get; set; }
 
+        [Column("comments")]
         public string Comment { get; set; }
 
-        public DateTime DateOrder { get; set; }
+        [Column("date_order")]
+        public DateOnly DateOrder { get; set; }
     }
 }
