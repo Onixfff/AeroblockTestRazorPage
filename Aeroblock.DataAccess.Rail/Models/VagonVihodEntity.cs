@@ -1,6 +1,4 @@
-﻿using System.Xml;
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
 namespace Aeroblock.DataAccess.Rail.Models
