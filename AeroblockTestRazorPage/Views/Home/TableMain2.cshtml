@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>№ Заявки</th>
+                    <th>№ Вагона</th>
+                    <th>Отправитель</th>
+                    <th>Получатель</th>
+                    <th>Дата отправления</th>
+                    <th>Материал</th>
+                    <th>Вес вагона, кг</th>
+                    <th>Дата прихода на станцию</th>
+                    <th>Статус прихода на станцию</th>
+                    <th>Партия разгрузки</th>
+                    <th>Дата поставки на разгрузку</th>
+                    <th>Дата окончания выгрузки</th>
+                    <th>Статус поставки на разгрузку</th>
+                    <th>Статус окончания выгрузки</th>
+                    <th>№ силоса</th>
+                    <th>Время выгрузки партии</th>
+                    <th>Время выгрузки вагона</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < @Model.Count; i++)
+                {
+                    <tr>
+                        <td>@Model[i].OrderId</td>
+                        <td>@Model[i].Number</td>
+                        <td>@Model[i].Sender</td>
+                        <td>@Model[i].Costumer</td>
+                        <td>@Model[i].Date</td>
+                        <td>@Model[i].Material</td>
+                        <td>@Model[i].Weight</td>
+                        <td>@Model[i].Prihod</td>
+                        @if(Model[i].IsPrihod == true)
+                        {
+                            <td>@Html.CheckBox("Enable",true);</td>
+                        }
+                        else
+                        {
+                            <td>@Html.CheckBox("Disable", false);</td>
+                        }
+                        <td>@Model[i].Partial</td>
+                        <td>@Model[i].Start</td>
+                        <td>@Model[i].Finish</td>
+                        @if (Model[i].IsStart == true)
+                        {
+                            <td>@Html.CheckBox("Enable", true);</td>
+                        }
+                        else
+                        {
+                            <td>@Html.CheckBox("Disable", false);</td>
+                        }
+                        @if (Model[i].IsStop == true)
+                        {
+                            <td>@Html.CheckBox("Enable", true);</td>
+                        }
+                        else
+                        {
+                            <td>@Html.CheckBox("Disable", false);</td>
+                        }
+                        <td>@Model[i].NumberSilos</td>
+                        <td>@Model[i].Time</td>
+                        <td>@Model[i].VagonFinish</td>
+                    </tr>
+                }
+            <tbody>
+        </table>
+    </div>
+            </div>
+        </div>
+    </div>
+}
