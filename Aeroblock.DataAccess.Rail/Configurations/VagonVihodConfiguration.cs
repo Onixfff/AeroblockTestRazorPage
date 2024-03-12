@@ -93,6 +93,11 @@ namespace Aeroblock.DataAccess.Rail.Configurations
                 .Property(e => e.VagonFinish)
                 .HasColumnType("DATETIME")
                 .IsRequired(false);
+
+            builder
+                .HasOne(e => e.Order)
+                .WithMany()
+                .HasForeignKey(e => e.OrderId);
         }
     }
 }

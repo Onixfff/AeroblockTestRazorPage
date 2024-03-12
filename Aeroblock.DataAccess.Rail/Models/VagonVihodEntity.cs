@@ -13,6 +13,9 @@ namespace Aeroblock.DataAccess.Rail.Models
         [Column("id_order")]
         public int? OrderId { get; set; }
 
+        [ForeignKey("OrderId")]
+        public OrderRzdEntity? Order { get; set; }
+
         [Column("number")]
         public string Number { get; set; } = string.Empty;
 
