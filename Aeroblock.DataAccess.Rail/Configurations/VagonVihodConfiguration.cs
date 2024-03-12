@@ -10,6 +10,7 @@ namespace Aeroblock.DataAccess.Rail.Configurations
         {
             builder
                 .HasIndex(x => x.Id)
+				.HasName("id_UNIQUE")
                 .IsUnique(true);
 
             builder
@@ -23,17 +24,23 @@ namespace Aeroblock.DataAccess.Rail.Configurations
             builder
                 .Property(e => e.Number)
                 .HasMaxLength(255)
+                .UseCollation("utf8_general_ci")
+                .HasCharSet("utf8")
                 .IsRequired(true);
 
             builder
                 .Property(e => e.Sender)
                 .HasMaxLength(255)
+                .UseCollation("utf8_general_ci")
+                .HasCharSet("utf8")
                 .IsRequired(false);
 
             builder
                 .Property(e => e.Costumer)
                 .HasMaxLength(255)
-                .IsRequired(false);
+				.UseCollation("utf8_general_ci")
+				.HasCharSet("utf8")
+				.IsRequired(false);
 
             builder
                 .Property(e => e.Date)
@@ -42,7 +49,9 @@ namespace Aeroblock.DataAccess.Rail.Configurations
 
             builder
                 .Property(e => e.Material)
-                .HasMaxLength(255);
+				.UseCollation("utf8_general_ci")
+				.HasCharSet("utf8")
+				.HasMaxLength(255);
 
             builder
                 .Property(e => e.Prihod)
@@ -57,7 +66,9 @@ namespace Aeroblock.DataAccess.Rail.Configurations
             builder
                 .Property(e => e.Partial)
                 .HasMaxLength(45)
-                .IsRequired(false);
+				.UseCollation("utf8_general_ci")
+				.HasCharSet("utf8")
+				.IsRequired(false);
 
             builder
                 .Property(e => e.Start)
@@ -82,22 +93,26 @@ namespace Aeroblock.DataAccess.Rail.Configurations
             builder
                 .Property(e => e.NumberSilos)
                 .HasMaxLength(45)
-                .IsRequired(false);
+				.UseCollation("utf8_general_ci")
+				.HasCharSet("utf8")
+				.IsRequired(false);
 
             builder
                 .Property(e => e.Time)
                 .HasMaxLength(5)
-                .IsRequired(false);
+                .UseCollation("latin1_swedish_ci")
+                .HasCharSet(null)
+				.IsRequired(false);
 
             builder
                 .Property(e => e.VagonFinish)
                 .HasColumnType("DATETIME")
                 .IsRequired(false);
 
-            builder
-                .HasOne(e => e.Order)
-                .WithMany()
-                .HasForeignKey(e => e.OrderId);
+            //builder
+            //    .HasOne(e => e.Order)
+            //    .WithMany()
+            //    .HasForeignKey(e => e.OrderId);
         }
     }
 }

@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    [Table("vagon_vihods")]
-    //[Table("vagon_vihod")]
+    //[Table("vagon_vihods")]
+    [Table("vagon_vihod")]
     public class VagonVihodEntity
     {
         [Column("id")]
@@ -13,8 +13,8 @@ namespace Aeroblock.DataAccess.Rail.Models
         [Column("id_order")]
         public int? OrderId { get; set; }
 
-        [ForeignKey("OrderId")]
-        public OrderRzdEntity? Order { get; set; }
+        //[ForeignKey("OrderId")]
+        //public OrderRzdEntity? Order { get; set; }
 
         [Column("number")]
         public string Number { get; set; } = string.Empty;
