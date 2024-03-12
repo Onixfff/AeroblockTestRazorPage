@@ -19,13 +19,14 @@ namespace Aeroblock.DataAccess.Rail
         public DbSet<VagonVihodEntity> VagonVihods { get; set; }
         public DbSet<OrderRzdEntity> OrderRzds { get; set; }
         public DbSet<CostumerEntity> Costumers { get; set; }
-
+        public DbSet<CountryEntity> Countries {  get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new VagonVihodConfiguration());
             builder.ApplyConfiguration(new OrderRzdConfiguration());
             builder.ApplyConfiguration(new CostumerConfiguration());
+            builder.ApplyConfiguration(new CountryConfiguration());
 
             base.OnModelCreating(builder);
         }
