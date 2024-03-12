@@ -22,6 +22,7 @@ namespace Aeroblock.DataAccess.Rail
         public DbSet<CountryEntity> Countries {  get; set; }
         public DbSet<DeliveryTermEntity> DeliveryTerms {  get; set; }
         public DbSet<ManufacturerEntity> Manufacturers { get; set; }
+        public DbSet<NameMaterialEntity> nameMaterials { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -31,6 +32,7 @@ namespace Aeroblock.DataAccess.Rail
             builder.ApplyConfiguration(new CountryConfiguration());
             builder.ApplyConfiguration(new DeliveryTermConfiguration());
             builder.ApplyConfiguration(new ManufacturerConfiguration());
+            builder.ApplyConfiguration(new NameMaterialConfiguration());
 
             base.OnModelCreating(builder);
         }
