@@ -15,7 +15,7 @@ namespace Aeroblock.DataAccess.Rail
             : base(options)
         {
         }
-
+        builder.UseCollation("latin1_bin");
         public DbSet<VagonVihodEntity> VagonVihods { get; set; }
         public DbSet<OrderRzdEntity> OrderRzds { get; set; }
         public DbSet<CostumerEntity> Costumers { get; set; }
@@ -30,7 +30,8 @@ namespace Aeroblock.DataAccess.Rail
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfiguration(new VagonVihodConfiguration());
+			builder.UseCollation("latin1_bin");
+			builder.ApplyConfiguration(new VagonVihodConfiguration());
             builder.ApplyConfiguration(new OrderRzdConfiguration());
             builder.ApplyConfiguration(new CostumerConfiguration());
             builder.ApplyConfiguration(new CountryConfiguration());
