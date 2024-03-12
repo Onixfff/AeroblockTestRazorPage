@@ -22,6 +22,11 @@ namespace Aeroblock.DataAccess.Rail
         public DbSet<CountryEntity> Countries {  get; set; }
         public DbSet<DeliveryTermEntity> DeliveryTerms {  get; set; }
         public DbSet<ManufacturerEntity> Manufacturers { get; set; }
+        public DbSet<NameMaterialEntity> NameMaterials { get; set; }
+        public DbSet<NdsEntity> Nds { get; set; }
+        public DbSet<PaymentTermEntity> PaymentTerms { get; set; }
+        public DbSet<SiloBalanceEntity> SiloBalances { get; set; }
+        public DbSet<SkladEntity> sklads { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -31,6 +36,11 @@ namespace Aeroblock.DataAccess.Rail
             builder.ApplyConfiguration(new CountryConfiguration());
             builder.ApplyConfiguration(new DeliveryTermConfiguration());
             builder.ApplyConfiguration(new ManufacturerConfiguration());
+            builder.ApplyConfiguration(new NameMaterialConfiguration());
+            builder.ApplyConfiguration(new NdsConfiguration());
+            builder.ApplyConfiguration(new PaymentTermConfiguration());
+            builder.ApplyConfiguration(new SiloBalanceConfiguration());
+            builder.ApplyConfiguration(new SkladConfiguration());
 
             base.OnModelCreating(builder);
         }

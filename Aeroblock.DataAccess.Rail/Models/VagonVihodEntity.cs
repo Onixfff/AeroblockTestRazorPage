@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    //[Table("vagon_vihod")]
     [Table("vagon_vihods")]
+    //[Table("vagon_vihod")]
     public class VagonVihodEntity
     {
         [Column("id")]

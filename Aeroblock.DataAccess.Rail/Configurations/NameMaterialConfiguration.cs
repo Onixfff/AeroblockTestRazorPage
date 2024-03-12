@@ -1,11 +1,10 @@
 ﻿using Aeroblock.DataAccess.Rail.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Net;
 
-public class CountryConfiguration : IEntityTypeConfiguration<CountryEntity>
+public class NameMaterialConfiguration : IEntityTypeConfiguration<NameMaterialEntity>
 {
-    public void Configure(EntityTypeBuilder<CountryEntity> builder)
+    public void Configure(EntityTypeBuilder<NameMaterialEntity> builder)
     {
         builder
             .HasIndex(x => x.Id)
@@ -19,5 +18,11 @@ public class CountryConfiguration : IEntityTypeConfiguration<CountryEntity>
             .Property(x => x.Name)
             .HasMaxLength(45)
             .IsRequired(false);
+
+        builder
+            .Property(x => x.Group)
+            .HasMaxLength(45)
+            .IsRequired(false);
     }
 }
+
