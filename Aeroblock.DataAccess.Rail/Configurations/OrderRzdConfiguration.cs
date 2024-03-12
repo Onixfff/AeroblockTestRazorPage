@@ -1,11 +1,6 @@
 ﻿using Aeroblock.DataAccess.Rail.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Aeroblock.DataAccess.Rail.Configurations
 {
@@ -38,7 +33,7 @@ namespace Aeroblock.DataAccess.Rail.Configurations
 
             builder
                 .Property(x => x.Weight)
-                .HasColumnType("Float")
+                .HasColumnType("FLOAT")
                 .IsRequired(false);
 
             builder
@@ -58,17 +53,17 @@ namespace Aeroblock.DataAccess.Rail.Configurations
 
             builder
                 .Property(x => x.Order)
-                .HasColumnType("TINYINT")
+                .HasMaxLength(1)
                 .IsRequired(true);
 
             builder
                 .Property(x => x.Old)
-                .HasColumnType("TINYINT")
+                .HasMaxLength(5)
                 .IsRequired(true);
 
             builder
                 .Property(x => x.Comment)
-                .HasColumnType("TINYINT")
+                .HasMaxLength(256)
                 .IsRequired(true);
 
             builder

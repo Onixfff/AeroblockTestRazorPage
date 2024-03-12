@@ -1,24 +1,34 @@
 ﻿using Aeroblock.DataAccess.Rail.Configurations;
 using Aeroblock.DataAccess.Rail.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Aeroblock.DataAccess.Rail
 {
-    public class RailDbContext(DbContextOptions<RailDbContext> options)
-        : DbContext(options)
+    public class RailDbContext : DbContext
     {
-        public DbSet<OrderRzdEntity> OrderRzds { get; set; }
-        public DbSet<VagonVihodEntity> VagonVihods { get; set; }
-
-        public DbSet<CostumerEntity> CostumerEntities { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        public RailDbContext(DbContextOptions<RailDbContext> options)
+            : base(options)
         {
-            modelBuilder.ApplyConfiguration(new VagonVihodConfiguration());
-            modelBuilder.ApplyConfiguration(new OrderRzdConfiguration());
-            modelBuilder.ApplyConfiguration(new CostumerConfiguration());
+        }
 
-            base.OnModelCreating(modelBuilder);
+        public DbSet<VagonVihodEntity> VagonVihods { get; set; }
+        public DbSet<OrderRzdEntity> OrderRzds { get; set; }
+        public DbSet<CostumerEntity> Costumers { get; set; }
+        public DbSet<CountryEntity> Countries {  get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.ApplyConfiguration(new VagonVihodConfiguration());
+            builder.ApplyConfiguration(new OrderRzdConfiguration());
+            builder.ApplyConfiguration(new CostumerConfiguration());
+            builder.ApplyConfiguration(new CountryConfiguration());
+
+            base.OnModelCreating(builder);
         }
     }
 }

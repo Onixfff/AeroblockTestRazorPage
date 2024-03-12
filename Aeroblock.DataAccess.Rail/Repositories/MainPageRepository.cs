@@ -1,11 +1,6 @@
 ﻿using Aeroblock.DataAccess.Rail.Interface;
 using Aeroblock.DataAccess.Rail.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aeroblock.DataAccess.Rail.Repositories
 {
@@ -20,7 +15,14 @@ namespace Aeroblock.DataAccess.Rail.Repositories
 
         public async Task<List<VagonVihodEntity>> GetAsync()
         {
-            return await _dbContext.VagonVihods.AsNoTracking().OrderBy(x => x.Id).ToListAsync();
+            return await _dbContext.VagonVihods
+                        .AsNoTracking()
+                        .OrderBy(b => b.Id)
+                        .Where(x => x.IsStop == false)
+                        .ToListAsync();
+
         }
     }
 }
+
+
