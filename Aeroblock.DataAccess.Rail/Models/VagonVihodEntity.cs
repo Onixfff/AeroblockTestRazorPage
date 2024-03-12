@@ -1,6 +1,4 @@
-﻿using System.Xml;
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
 namespace Aeroblock.DataAccess.Rail.Models
@@ -16,7 +14,7 @@ namespace Aeroblock.DataAccess.Rail.Models
         public int? OrderId { get; set; }
 
         [Column("number")]
-        public string Number { get; set; }
+        public string Number { get; set; } = string.Empty;
 
         [Column("sender")]
         public string? Sender { get; set; } = string.Empty;
@@ -28,11 +26,9 @@ namespace Aeroblock.DataAccess.Rail.Models
         public DateTime? Date { get; set; } = DateTime.UnixEpoch;
 
         [Column("material")]
-        [Required(AllowEmptyStrings = true)]
-        public string Material { get; set; }
+        public string Material { get; set; } = string.Empty;
 
         [Column("weight")]
-        [Required(AllowEmptyStrings = true)]
         public int Weight { get; set; }
 
         [Column("data_prihod")]

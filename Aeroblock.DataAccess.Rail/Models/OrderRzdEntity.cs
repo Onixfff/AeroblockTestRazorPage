@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
@@ -7,19 +8,19 @@ namespace Aeroblock.DataAccess.Rail.Models
     public class OrderRzdEntity
     {
         [Column("id")]
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
         [Column("date")]
-        public DateOnly Date { get; set; }
+        public DateOnly Date { get; set; } = DateOnly.MinValue;
 
         [Column("costumer")]
-        public string Costumer { get; set; }
+        public string Costumer { get; set; } = string.Empty;
 
         [Column("material")]
-        public string Material { get; set; }
+        public string Material { get; set; } = string.Empty;
 
         [Column("weight_1")]
-        public string? Weight { get; set; } = string.Empty;
+        public float? Weight { get; set; } = 0;
 
         [Column("col")]
         public int? Col { get; set; } = 0;
@@ -31,15 +32,15 @@ namespace Aeroblock.DataAccess.Rail.Models
         public int? Fact { get; set; } = 0;
 
         [Column("change_order")]
-        public bool Order { get; set; }
+        public bool Order { get; set; } = false;
 
         [Column("old")]
-        public string Old { get; set; }
+        public string Old { get; set; } = string.Empty;
 
         [Column("comments")]
-        public string Comment { get; set; }
+        public string Comment { get; set; } = string.Empty;
 
         [Column("date_order")]
-        public DateOnly DateOrder { get; set; }
+        public DateOnly DateOrder { get; set; } = DateOnly.MinValue;
     }
 }

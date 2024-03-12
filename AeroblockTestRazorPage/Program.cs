@@ -1,7 +1,7 @@
-using Aeroblock.DataAccess.Rail;
 using Aeroblock.DataAccess.Rail.Interface;
 using Microsoft.EntityFrameworkCore;
 using Aeroblock.DataAccess.Rail.Repositories;
+using Aeroblock.DataAccess.Rail;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +13,8 @@ var connectionString = builder.Configuration.GetConnectionString("local");
 builder.Services.AddDbContext<RailDbContext>(
     options =>
     {
-        options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+        options.UseMySql(connectionString, new MySqlServerVersion(new Version(8,0,36)));
+        options.LogTo(Console.WriteLine, LogLevel.Information).EnableSensitiveDataLogging().EnableDetailedErrors();
     });
 
 builder.Services.AddScoped<IMainPageRepository, MainPageRepository>();
