@@ -20,6 +20,7 @@ namespace Aeroblock.DataAccess.Rail
         public DbSet<OrderRzdEntity> OrderRzds { get; set; }
         public DbSet<CostumerEntity> Costumers { get; set; }
         public DbSet<CountryEntity> Countries {  get; set; }
+        public DbSet<DeliveryTermEntity> deliveryTerms {  get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -27,6 +28,7 @@ namespace Aeroblock.DataAccess.Rail
             builder.ApplyConfiguration(new OrderRzdConfiguration());
             builder.ApplyConfiguration(new CostumerConfiguration());
             builder.ApplyConfiguration(new CountryConfiguration());
+            builder.ApplyConfiguration(new DeliveryTermConfiguration());
 
             base.OnModelCreating(builder);
         }
