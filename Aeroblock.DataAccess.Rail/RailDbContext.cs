@@ -20,7 +20,7 @@ namespace Aeroblock.DataAccess.Rail
         public DbSet<OrderRzdEntity> OrderRzds { get; set; }
         public DbSet<CostumerEntity> Costumers { get; set; }
         public DbSet<CountryEntity> Countries {  get; set; }
-        public DbSet<DeliveryTermEntity> deliveryTerms {  get; set; }
+        public DbSet<DeliveryTermEntity> DeliveryTerms {  get; set; }
         public DbSet<ManufacturerEntity> Manufacturers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
