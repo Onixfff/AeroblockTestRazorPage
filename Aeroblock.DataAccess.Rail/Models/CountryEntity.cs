@@ -9,7 +9,7 @@ namespace Aeroblock.DataAccess.Rail.Models
         [Column("id")]
         public int Id { get; set; } = 0;
 
-        [Column("date")]
+        [Column("name")]
         public string? Name { get; set; } = string.Empty;
     }
 }
