@@ -2,9 +2,9 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    [Table("countrys")]
-    //[Table("country")]
-    public class CountryEntity
+    [Table("delivery_terms")]
+    //[Table("delivery_term")]
+    public class DeliveryTermEntity
     {
         [Column("id")]
         public int Id { get; set; } = 0;
