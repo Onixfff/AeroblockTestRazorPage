@@ -26,6 +26,7 @@ namespace Aeroblock.DataAccess.Rail
         public DbSet<NdsEntity> Nds { get; set; }
         public DbSet<PaymentTermEntity> PaymentTerms { get; set; }
         public DbSet<SiloBalanceEntity> SiloBalances { get; set; }
+        public DbSet<SkladEntity> sklads { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -39,6 +40,7 @@ namespace Aeroblock.DataAccess.Rail
             builder.ApplyConfiguration(new NdsConfiguration());
             builder.ApplyConfiguration(new PaymentTermConfiguration());
             builder.ApplyConfiguration(new SiloBalanceConfiguration());
+            builder.ApplyConfiguration(new SkladConfiguration());
 
             base.OnModelCreating(builder);
         }
