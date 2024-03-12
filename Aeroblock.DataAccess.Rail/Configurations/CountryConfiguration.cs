@@ -1,6 +1,7 @@
 ﻿using Aeroblock.DataAccess.Rail.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Net;
 
 public class CountryConfiguration : IEntityTypeConfiguration<CountryEntity>
 {
