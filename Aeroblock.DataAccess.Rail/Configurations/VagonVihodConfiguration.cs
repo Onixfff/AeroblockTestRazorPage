@@ -109,10 +109,10 @@ namespace Aeroblock.DataAccess.Rail.Configurations
                 .HasColumnType("DATETIME")
                 .IsRequired(false);
 
-            //builder
-            //    .HasOne(e => e.Order)
-            //    .WithMany()
-            //    .HasForeignKey(e => e.OrderId);
+            builder
+                .HasOne(e => e.Order)
+                .WithMany()
+                .HasForeignKey(e => e.OrderId);
         }
     }
 }

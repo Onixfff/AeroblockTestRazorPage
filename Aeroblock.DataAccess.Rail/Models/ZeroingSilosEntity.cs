@@ -28,6 +28,7 @@ namespace Aeroblock.DataAccess.Rail.Models
 		[Column("id_silos")]
 		public int? SilosId { get; set; }
 
+		[ForeignKey("SilosId")]
 		public SiloBalanceEntity? SiloBalance { get; set; }
 	}
 }
