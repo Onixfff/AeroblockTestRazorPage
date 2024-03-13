@@ -17,9 +17,9 @@ namespace Aeroblock.DataAccess.Rail.Repositories
         {
             return await _dbContext.VagonVihods
                         .AsNoTracking()
-                        .OrderBy(b => b.Id)
                         .Where(x => x.IsStop == false)
-                        .ToListAsync();
+                        .OrderByDescending(b => b.Id)
+						.ToListAsync();
 
         }
     }
