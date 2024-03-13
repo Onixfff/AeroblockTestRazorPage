@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    [Table("order_rzds")]
-    //[Table("order_rzd")]
+    //[Table("order_rzds")]
+    [Table("order_rzd")]
     public class OrderRzdEntity
     {
         [Column("id")]

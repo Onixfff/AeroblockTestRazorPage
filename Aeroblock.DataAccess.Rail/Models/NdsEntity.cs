@@ -2,8 +2,8 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    [Table("ndss")]
-    //[Table("nds")]
+    //[Table("ndss")]
+    [Table("nds")]
     public class NdsEntity
     {
         [Column("id")]

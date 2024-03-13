@@ -2,8 +2,8 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    [Table("countrys")]
-    //[Table("country")]
+    //[Table("countrys")]
+    [Table("country")]
     public class CountryEntity
     {
         [Column("id")]

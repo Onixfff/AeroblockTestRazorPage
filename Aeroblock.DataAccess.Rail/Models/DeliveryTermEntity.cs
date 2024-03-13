@@ -2,8 +2,8 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    [Table("delivery_terms")]
-    //[Table("delivery_term")]
+    //[Table("delivery_terms")]
+    [Table("delivery_term")]
     public class DeliveryTermEntity
     {
         [Column("id")]

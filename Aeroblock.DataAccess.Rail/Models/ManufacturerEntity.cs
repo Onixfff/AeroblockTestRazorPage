@@ -2,8 +2,8 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    [Table("manufacturers")]
-    //[Table("manufacturer")]
+    //[Table("manufacturers")]
+    [Table("manufacturer")]
     public class ManufacturerEntity
     {
         [Column("id")]

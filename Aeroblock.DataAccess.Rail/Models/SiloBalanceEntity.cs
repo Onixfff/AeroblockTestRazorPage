@@ -2,8 +2,8 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    [Table("silo_balances")]
-    //[Table("silo_balance")]
+    //[Table("silo_balances")]
+    [Table("silo_balance")]
     public class SiloBalanceEntity
     {
         [Column("id")]

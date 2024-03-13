@@ -2,8 +2,8 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    [Table("sklads")]
-    //[Table("sklad")]
+    //[Table("sklads")]
+    [Table("sklad")]
     public class SkladEntity
     {
         [Column("id")]
