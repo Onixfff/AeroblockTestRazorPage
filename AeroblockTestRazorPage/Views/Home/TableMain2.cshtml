@@ -42,30 +42,30 @@
                         <td>@Model[i].Prihod</td>
                         @if(Model[i].IsPrihod == true)
                         {
-                            <td>@Html.CheckBox("Enable",true);</td>
+                            <td>@Html.CheckBox("Enable",true)</td>
                         }
                         else
                         {
-                            <td>@Html.CheckBox("Disable", false);</td>
+                            <td>@Html.CheckBox("Disable", false)</td>
                         }
                         <td>@Model[i].Partial</td>
                         <td>@Model[i].Start</td>
                         <td>@Model[i].Finish</td>
                         @if (Model[i].IsStart == true)
                         {
-                            <td>@Html.CheckBox("Enable", true);</td>
+                            <td>@Html.CheckBox("Enable", true)</td>
                         }
                         else
                         {
-                            <td>@Html.CheckBox("Disable", false);</td>
+                            <td>@Html.CheckBox("Disable", false)</td>
                         }
                         @if (Model[i].IsStop == true)
                         {
-                            <td>@Html.CheckBox("Enable", true);</td>
+                            <td>@Html.CheckBox("Enable", true)</td>
                         }
                         else
                         {
-                            <td>@Html.CheckBox("Disable", false);</td>
+                            <td>@Html.CheckBox("Disable", false)</td>
                         }
                         <td>@Model[i].NumberSilos</td>
                         <td>@Model[i].Time</td>
