@@ -37,7 +37,7 @@ namespace Aeroblock.DataAccess.Rail.Models
 		public bool? nds_tarif_empty_from_kaliningrad_by { get; set; } = false;
 
 		[Column("tarif_full_to_kaliningrad_lt")]
-		public float tarif_full_to_kaliningrad_lt { get; set; } = 0;
+		public float? tarif_full_to_kaliningrad_lt { get; set; } = 0;
 
 		[Column("nds_tarif_full_to_kaliningrad_lt")]
 		public bool? nds_tarif_full_to_kaliningrad_lt { get; set; } = false;
@@ -55,6 +55,6 @@ namespace Aeroblock.DataAccess.Rail.Models
 		public bool? nds_rent_vagon { get; set; } = false;
 
 		[Column("data")]
-		public DateTime data { get; set; } = DateTime.UtcNow;
+		public DateTime? data { get; set; } = DateTime.UtcNow;
 	}
 }
