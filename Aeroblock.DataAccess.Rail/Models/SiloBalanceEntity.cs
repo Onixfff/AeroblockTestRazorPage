@@ -2,8 +2,12 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
+#if DEBUG
+    [Table("silo_balance")]
+#else
     [Table("silo_balances")]
-    //[Table("silo_balance")]
+#endif
+
     public class SiloBalanceEntity
     {
         [Column("id")]

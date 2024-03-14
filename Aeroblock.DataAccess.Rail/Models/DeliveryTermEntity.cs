@@ -2,8 +2,12 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
+#if DEBUG
+    [Table("delivery_term")]
+#else
     [Table("delivery_terms")]
-    //[Table("delivery_term")]
+#endif
+
     public class DeliveryTermEntity
     {
         [Column("id")]

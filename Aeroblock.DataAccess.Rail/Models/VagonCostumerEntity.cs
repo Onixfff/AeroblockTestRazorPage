@@ -2,8 +2,12 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-	[Table("vagon_costumerss")]
-	//[Table("vagon_costumers")]
+#if DEBUG
+	[Table("vagon_costumers")]
+#else
+[Table("vagon_costumerss")]
+#endif
+
 	public class VagonCostumerEntity
 	{
 		[Column("id")]

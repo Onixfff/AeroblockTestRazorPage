@@ -3,8 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
+#if DEBUG
+    [Table("order_rzd")]
+#else
     [Table("order_rzds")]
-    //[Table("order_rzd")]
+#endif
+
     public class OrderRzdEntity
     {
         [Column("id")]

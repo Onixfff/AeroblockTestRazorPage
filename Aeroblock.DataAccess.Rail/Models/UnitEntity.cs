@@ -2,8 +2,12 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
+#if DEBUG
+	[Table("unit")]
+#else
 	[Table("units")]
-	//[Table("unit")]
+#endif
+
 	public class UnitEntity
 	{
 		[Column("id")]

@@ -2,8 +2,12 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
+#if DEBUG
+    [Table("name_material")]
+#else
     [Table("name_materials")]
-    //[Table("name_material")]
+#endif
+
     public class NameMaterialEntity
     {
         [Column("id")]

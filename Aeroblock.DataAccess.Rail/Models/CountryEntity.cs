@@ -4,8 +4,11 @@ using System.Globalization;
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-	[Table("countrys")]
-    //[Table("country")]
+#if DEBUG
+    [Table("country")]
+#else
+    [Table("countrys")]
+#endif
     public class CountryEntity
     {
         [Column("id")]

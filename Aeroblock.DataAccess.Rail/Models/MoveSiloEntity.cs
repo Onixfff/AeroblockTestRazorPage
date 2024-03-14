@@ -2,8 +2,12 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
+#if DEBUG
+	[Table("move_silo")]
+#else
 	[Table("move_silos")]
-	//[Table("move_silo")]
+#endif
+
 	public class MoveSiloEntity
 	{
 		[Column("id")]

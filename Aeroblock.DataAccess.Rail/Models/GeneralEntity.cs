@@ -3,8 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
+#if DEBUG
+	[Table("general")]
+#else
 	[Table("generals")]
-	//[Table("general")]
+#endif
 	public class GeneralEntity
 	{
 		[Column("id")]

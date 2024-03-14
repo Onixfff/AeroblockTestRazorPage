@@ -2,8 +2,12 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
+#if DEBUG
+    [Table("payment_term")]
+#else
     [Table("payment_terms")]
-    //[Table("payment_term")]
+#endif
+
     public class PaymentTermEntity
     {
         [Column("id")]

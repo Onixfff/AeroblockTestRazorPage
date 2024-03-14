@@ -2,8 +2,12 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
+#if DEBUG
+    [Table("sklad")]
+#else
     [Table("sklads")]
-    //[Table("sklad")]
+#endif
+
     public class SkladEntity
     {
         [Column("id")]

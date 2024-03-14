@@ -2,8 +2,11 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
+#if DEBUG
+    [Table("nds")]
+#else
     [Table("ndss")]
-    //[Table("nds")]
+#endif
     public class NdsEntity
     {
         [Column("id")]
