@@ -122,8 +122,8 @@ public class GeneralConfiguration : IEntityTypeConfiguration<GeneralEntity>
 
 		builder
 			.Property(x => x.Date)
-			.HasColumnType("DATETIME")
-			.IsRequired(false);
+			.HasColumnType("DATE")
+			.IsRequired(true);
 
 		builder
 			.Property(x => x.Comments)
