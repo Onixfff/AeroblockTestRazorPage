@@ -2,6 +2,18 @@
     ViewData["Title"] = "Home Page";
 }
 
+<div class="panel">
+    <div class="panel-header">
+        Сортировка
+    </div>
+    <div class="panel-content">
+        <button>Текущий месяц</button>
+        <button class="col-md-3">2</button>
+        <button class=col-1>3</button>
+        <button class=d-md-inline-block>4</button>
+    </div>
+</div>
+
 <body>
     <div id="Table"></div>
 </body>
@@ -39,5 +51,18 @@
                 }
             });
         })
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var panelHeaders = document.querySelectorAll('.panel-header');
+
+            panelHeaders.forEach(function (panelHeader) {
+                panelHeader.addEventListener('click', function () {
+                    var panelContent = this.nextElementSibling;
+                    panelContent.classList.toggle('hidden');
+                });
+            });
+        });
     </script>
 }
