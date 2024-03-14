@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Aeroblock.DataAccess.Rail.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 public class CostumerConfiguration : IEntityTypeConfiguration<CostumerEntity>
