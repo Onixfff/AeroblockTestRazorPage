@@ -15,6 +15,7 @@ namespace Aeroblock.DataAccess.Rail
             : base(options)
         {
         }
+
         public DbSet<VagonVihodEntity> VagonVihods { get; set; }
         public DbSet<OrderRzdEntity> OrderRzds { get; set; }
         public DbSet<CostumerEntity> Costumers { get; set; }
