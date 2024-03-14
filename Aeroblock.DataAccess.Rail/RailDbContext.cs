@@ -29,6 +29,14 @@ namespace Aeroblock.DataAccess.Rail
         public DbSet<VagonSendlerEntity> VagonSendlers { get; set; }
         public DbSet<ValutaEntity> Valuta { get; set; }
         public DbSet<ZeroingSilosEntity> ZeroingSilos { get; set; }
+        public DbSet<VagonMaterialEntity> VagonMaterials { get; set; }
+        public DbSet<VagonCostumerEntity> VagonCostumers { get; set; }
+        public DbSet<UnitEntity> Units { get; set; }
+        public DbSet<TariffVagonEntity> TariffVagons { get; set; }
+        public DbSet<StationEntity> Stations { get; set; }
+        public DbSet<MoveSiloEntity> MoveSilos { get; set; }
+        public DbSet<GroupMaterialEntity> GroupMaterials { get; set; }
+        public DbSet<GeneralEntity> Generals { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -48,6 +56,14 @@ namespace Aeroblock.DataAccess.Rail
             builder.ApplyConfiguration(new VagonSendlerConfiguration());
             builder.ApplyConfiguration(new ValutaConfiguration());
             builder.ApplyConfiguration(new ZeroingSilosConfiguration());
+            builder.ApplyConfiguration(new VagonMaterialConfiguration());
+            builder.ApplyConfiguration(new VagonCostumerConfiguration());
+            builder.ApplyConfiguration(new UnitConfiguration());
+            builder.ApplyConfiguration(new TariffVagonConfiguration());
+            builder.ApplyConfiguration(new StationConfiguration());
+            builder.ApplyConfiguration(new MoveSiloConfiguration());
+            builder.ApplyConfiguration(new GroupMaterialConfiguration());
+            builder.ApplyConfiguration(new GeneralConfiguration());
 
             base.OnModelCreating(builder);
         }
