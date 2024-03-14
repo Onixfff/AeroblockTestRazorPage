@@ -2,8 +2,8 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    //[Table("name_materials")]
-    [Table("name_material")]
+    [Table("name_materials")]
+    //[Table("name_material")]
     public class NameMaterialEntity
     {
         [Column("id")]

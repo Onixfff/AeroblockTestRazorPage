@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-    //[Table("costumers")]
-    [Table("costumer")]
+    [Table("costumers")]
+    //[Table("costumer")]
 public class CostumerEntity
 {
     [Column("id")]

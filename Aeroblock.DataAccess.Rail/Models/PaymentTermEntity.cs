@@ -2,8 +2,8 @@
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-    //[Table("payment_terms")]
-    [Table("payment_term")]
+    [Table("payment_terms")]
+    //[Table("payment_term")]
     public class PaymentTermEntity
     {
         [Column("id")]

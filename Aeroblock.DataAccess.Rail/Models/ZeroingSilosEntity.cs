@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-	[Table("zeroing_silos")]
-	//[Table("zeroing_siloss")]
+	//[Table("zeroing_silos")]
+	[Table("zeroing_siloss")]
 	public class ZeroingSilosEntity
 	{
 		[Column("id")]
