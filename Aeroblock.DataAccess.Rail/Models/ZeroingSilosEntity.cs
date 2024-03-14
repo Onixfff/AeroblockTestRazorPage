@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Aeroblock.DataAccess.Rail.Models
 {
-	[Table("zeroing_siloss")]
+	[Table("zeroing_silos")]
 	//[Table("zeroing_silos")]
 	public class ZeroingSilosEntity
 	{
@@ -11,7 +11,7 @@ namespace Aeroblock.DataAccess.Rail.Models
 		public int Id { get; set; } = 0;
 
 		[Column("date")]
-		public DateTime Date { get; set; } = DateTime.UnixEpoch;
+		public DateTime? Date { get; set; } = DateTime.UnixEpoch;
 
 		[Column("weight")]
 		public float Weight { get; set; } = float.MinValue;
