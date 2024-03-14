@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class ValutaConfiguration : IEntityTypeConfiguration<ValutaEntity>
+public class GroupMaterialConfiguration : IEntityTypeConfiguration<GroupMaterialEntity>
 {
-	public void Configure(EntityTypeBuilder<ValutaEntity> builder)
+	public void Configure(EntityTypeBuilder<GroupMaterialEntity> builder)
 	{
 		builder
 			.HasIndex(x => x.Id)
@@ -15,7 +15,7 @@ public class ValutaConfiguration : IEntityTypeConfiguration<ValutaEntity>
 
 		builder
 			.Property(x => x.Name)
-			.HasMaxLength(10)
-			.IsRequired(true);
+			.HasMaxLength(45)
+			.IsRequired(false);
 	}
 }
