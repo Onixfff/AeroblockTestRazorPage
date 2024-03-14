@@ -7,11 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-#if DEBUG
+
 var connectionString = builder.Configuration.GetConnectionString("local");
-#else
-var connectionString = builder.Configuration.GetConnectionString("enternet");
-#endif
+
 
 builder.Services.AddDbContext<RailDbContext>(
     options =>
