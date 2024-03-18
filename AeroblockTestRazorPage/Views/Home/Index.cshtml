@@ -1,20 +1,40 @@
-﻿@{
+﻿<link rel="stylesheet" href="~/css/ModelWindow.css" asp-append-version="true" />
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="panel">
-    <div class="panel-header">
-        Сортировка
-    </div>
-    <div class="panel-content">
-        <button>Текущий месяц</button>
-        <button class="col-md-3">2</button>
-        <button class=col-1>3</button>
-        <button class=d-md-inline-block>4</button>
-    </div>
-</div>
-
 <body>
+    <div class="panel">
+        <div class="panel-header">
+            Сортировка
+        </div>
+        <div class="panel-content">
+            <button>Текущий месяц</button>
+            <button class="col-md-3">2</button>
+            <button class=col-1>3</button>
+            <button class=d-md-inline-block>4</button>
+        </div>
+    </div>
+
+    <div class="modal modal--l" id="modal-1">
+        <div class="modal__dialog">
+            <div class="modal__dialog-header">
+                <div class="modal__dialog-header-content">
+                    Modal window 1
+                </div>
+                <div class="modal__dialog-header-close">
+                    <button class="js-modal-close modal__dialog-header-close-btn"><span>&times;</span></button>
+                </div>
+            </div>
+            <div class="modal__dialog-body">
+                <div>modal__dialog-body</div>
+            </div>
+            <div class="modal__dialog-footer">
+                <button class="js-modal-close modal__dialog-footer-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
     <div id="Table"></div>
 </body>
 
