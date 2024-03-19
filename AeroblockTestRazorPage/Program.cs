@@ -10,7 +10,6 @@ builder.Services.AddControllersWithViews();
 
 var connectionString = builder.Configuration.GetConnectionString("local");
 
-
 builder.Services.AddDbContext<RailDbContext>(
     options =>
     {
@@ -19,6 +18,7 @@ builder.Services.AddDbContext<RailDbContext>(
     });
 
 builder.Services.AddScoped<IMainPageRepository, MainPageRepository>();
+builder.Services.AddScoped<IResettingSilos, ResettingSilos>();
 
 var app = builder.Build();
 
