@@ -59,7 +59,7 @@ namespace AeroblockTestRazorPage.Controllers
         public async Task<IActionResult> GetTablePartial()
         {
             var result = await _mainPageRepository.GetAsync();
-            return PartialView("TableMain2", result);
+            return PartialView("TableMain", result);
         }
     }
 }

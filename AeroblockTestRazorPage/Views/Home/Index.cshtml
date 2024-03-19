@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <div id="Table"></div>
+    <div id="TableMain"></div>
 </body>
 
 @section Scripts 
@@ -44,7 +44,7 @@
 
         $(document).ready(function () {
 
-            $('#Table').load("/Home/GetTablePartial")
+            $('#TableMain').load("/Home/GetTablePartial")
 
             $.ajax({
                 type: "GET",
