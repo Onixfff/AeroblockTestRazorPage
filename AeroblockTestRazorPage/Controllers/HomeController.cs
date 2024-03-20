@@ -1,11 +1,7 @@
 using Aeroblock.DataAccess.Rail.Interface;
-using Aeroblock.DataAccess.Rail.Models;
 using AeroblockTestRazorPage.Models;
-using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Diagnostics;
-using System.Web;
 
 namespace AeroblockTestRazorPage.Controllers
 {
