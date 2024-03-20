@@ -51,6 +51,13 @@ namespace AeroblockTestRazorPage.Controllers
             return new JsonResult(Ok());
         }
 
+        public IActionResult RedirectToOtherController()
+        {
+            return Json(new { redirectUrl = Url.Action("Index", "ResettingSilos") });
+            return RedirectToAction("Index", "ResettingSilos");
+            return RedirectToRoute(new {Controller = "ResettingSilos", action = "Index" });
+        }
+
         public async Task<IActionResult> GetTablePartial()
         {
             var result = await _mainPageRepository.GetAsync();
