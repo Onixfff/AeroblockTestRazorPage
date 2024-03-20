@@ -34,13 +34,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Отчет</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" id="myButton" class="nav-link text-dark">Отчет по складам</a>
+                            <a id="redirectButton" asp-area="" asp-controller="ResettingSilos" asp-action="Index" class="nav-link text-dark">Отчет по складам</a>
                         </li>
                         <li class="nav-item">
-                            <button id="redirectButton" class="nav-link text-dark">Отчет по складам 26</button>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Resetting" asp-action="Index">Обнуления силосов</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ResettingSilos" asp-action="Index">Обнуления силосов</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Перемещения</a>
@@ -65,22 +62,4 @@
     <script src="~/js/ModalWindow.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-<script>
-    $(document).ready(function () {
-        $("#redirectButton").click(function () {
-            $.ajax({
-                url: '/Home/RedirectToOtherController',
-                type: 'POST',
-                success: function (result) {
-                    // Перенаправление на другую страницу
-                    console.log(result.redirectUrl);
-                    window.location.href = result.redirectUrl;
-                },
-                error: function (xhr, status, error) {
-                    // Обработка ошибок
-                }
-            });
-        });
-    });
-</script>
 </html>
