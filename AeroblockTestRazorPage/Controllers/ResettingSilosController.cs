@@ -33,7 +33,7 @@ namespace AeroblockTestRazorPage.Controllers
         public async Task<IActionResult> GetTablePartial()
         {
             var result = await _resettingSilos.GetDataAsync();
-            return PartialView("TableMain", result);
+            return PartialView("Table", result);
         }
     }
 }

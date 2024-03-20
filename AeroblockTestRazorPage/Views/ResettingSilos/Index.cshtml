@@ -3,4 +3,12 @@
     ViewData["Title"] = "Resetting Silos";
 }
 
-<p>Привет я другая страница</p>
+<body>
+    <div id="TableMain"></div>
+</body>
+
+<script>
+$(document).ready(function () {
+        $('#TableResettingSilos').load("/ResettingSilos/GetTablePartial")
+})
+</script>

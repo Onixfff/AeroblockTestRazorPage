@@ -58,6 +58,11 @@ namespace AeroblockTestRazorPage.Controllers
             return RedirectToRoute(new {Controller = "ResettingSilos", action = "Index" });
         }
 
+        public IActionResult GetModalWindow()
+        {
+            return PartialView("../Shared/Components/BigModal");
+        }
+
         public async Task<IActionResult> GetTablePartial()
         {
             var result = await _mainPageRepository.GetAsync();

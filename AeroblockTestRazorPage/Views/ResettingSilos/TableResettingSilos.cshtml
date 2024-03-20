@@ -1,0 +1,32 @@
+﻿@using Aeroblock.DataAccess.Rail.Models
+@model List<ZeroingSilosEntity>;
+@{
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Дата последнего обнуления</th>
+                <th>Вес при обнулении</th>
+                <th>Загруженный вес, кг</th>
+                <th>Наименование материала</th>
+                <th>Местоположения сил оса</th>
+                <th>№ Силоса</th>
+                <th>№ Недостачи</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < @Model.Count; i++)
+            {
+                <tr>
+                    <td>@Model[i].Date</td>
+                    <td>@Model[i].Weight</td>
+                    <td>@Model[i].WeightSumIn</td>
+                    <td>@Model[i].Material</td>
+                    <td>@Model[i].SiloBalance.Manufactur</td>
+                    <td>@Model[i].SiloBalance.SiloNum</td>
+                    <td>@Model[i].SiloBalance</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<script src="~/js/ReturnBaseValueCheckBox.js" asp-append-version="true"></script>
