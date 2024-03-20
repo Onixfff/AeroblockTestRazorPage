@@ -30,10 +30,15 @@ namespace AeroblockTestRazorPage.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        public IActionResult GetModalWindow()
+        {
+            return PartialView("../Shared/Components/BigModal");
+        }
+
         public async Task<IActionResult> GetTablePartial()
         {
             var result = await _resettingSilos.GetDataAsync();
-            return PartialView("Table", result);
+            return PartialView("TableResettingSilos", result);
         }
     }
 }
