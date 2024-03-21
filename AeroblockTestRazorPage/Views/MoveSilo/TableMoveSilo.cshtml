@@ -1,0 +1,41 @@
+﻿@using Aeroblock.DataAccess.Rail.Models
+@model List<MoveSiloEntity>;
+@{
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Дата и время</th>
+                <th>Местоположение</th>
+                <th>№ Силоса</th>
+                <th>Материал</th>
+                <th>Производитель</th>
+                <th>Move</th>
+                <th>Местоположение куда</th>
+                <th>Силос № куда</th>
+                <th>Вес, кг</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < @Model.Count; i++)
+            {
+                <tr>
+                    <td>@Model[i].Timestamp</td>
+                    @if (@Model[i].TargetMoveSilo is not null)
+                    {
+                        <td>@Model[i].TargetMoveSilo.Manufactur</td>
+                        <td>@Model[i].TargetMoveSilo.SiloNum</td>
+                    }
+                    <td>@Model[i].target_silo_material</td>
+                    <td>@Model[i].target_silo_sendler</td>
+                    <td>-----></td>
+                    @if (@Model[i].SourceMoveSilo is not null)
+                    {
+                        <td>@Model[i].SourceMoveSilo.Manufactur</td>
+                        <td>@Model[i].SourceMoveSilo.SiloNum</td>
+                    }
+                    <td>@Model[i].weight</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

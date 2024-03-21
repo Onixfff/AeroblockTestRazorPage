@@ -1,15 +1,15 @@
 ﻿<link rel="stylesheet" href="~/css/ModelWindow.css" asp-append-version="true" />
 @{
-    ViewData["Title"] = "Resetting Silos";
+    ViewData["Title"] = "Move Silo";
 }
 
 <body>
     <div id="Modal"></div>
-    <div id="TableResettingSilos"></div>
+    <div id="TableMoveSilo"></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-            $('#TableResettingSilos').load("/ResettingSilos/GetTablePartial")
+        $('#TableMoveSilo').load("/MoveSilo/GetTablePartial")
     })
 </script>

@@ -20,7 +20,7 @@ namespace Aeroblock.DataAccess.Rail.Models
 		public int? target_silo_id { get; set; } = 0;
 
 		[ForeignKey("target_silo_id")]
-		public MoveSiloEntity? TargetMoveSilo { get; set; }
+		public SiloBalanceEntity? TargetMoveSilo { get; set; }
 
 		[Column("target_silo_material")]
 		public string? target_silo_material { get; set; } = string.Empty;
@@ -32,7 +32,7 @@ namespace Aeroblock.DataAccess.Rail.Models
 		public int? source_silo_id { get; set; } = 0;
 
 		[ForeignKey("source_silo_id")]
-		public MoveSiloEntity? SourceMoveSilo { get; set; }
+		public SiloBalanceEntity? SourceMoveSilo { get; set; }
 
 		[Column("source_silo_material")]
 		public string? source_silo_material { get; set; } = string.Empty;

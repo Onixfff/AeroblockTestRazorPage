@@ -7,14 +7,14 @@ using System.Diagnostics;
 
 namespace AeroblockTestRazorPage.Controllers
 {
-    public class MoveSilosController : Controller, IGetModalWindow
+    public class MoveSiloController : Controller, IGetModalWindow
     {
 
         private readonly IMoveSilo _moveSilo;
 
         private readonly ILogger<HomeController> _logger;
 
-        public MoveSilosController(ILogger<HomeController> logger, IMoveSilo moveSilo)
+        public MoveSiloController(ILogger<HomeController> logger, IMoveSilo moveSilo)
         {
             _logger = logger;
             _moveSilo = moveSilo;
@@ -40,7 +40,7 @@ namespace AeroblockTestRazorPage.Controllers
         public async Task<IActionResult> GetTablePartial()
         {
             var result = await _moveSilo.GetAsync();
-            return PartialView("TableMain", result);
+            return PartialView("TableMoveSilo", result);
         }
     }
 }
