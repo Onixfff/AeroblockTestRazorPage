@@ -2,7 +2,7 @@
 
 namespace Aeroblock.DataAccess.Rail.Interface
 {
-    internal interface IMoveSilo
+    public interface IMoveSilo
     {
         public Task<List<MoveSiloEntity>> GetAsync();
     }
