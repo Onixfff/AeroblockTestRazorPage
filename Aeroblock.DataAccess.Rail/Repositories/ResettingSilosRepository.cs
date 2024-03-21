@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Aeroblock.DataAccess.Rail.Repositories
 {
-    public class ResettingSilos : IResettingSilos
+    public class ResettingSilosRepository : IResettingSilos
     {
         private readonly RailDbContext _context;
 
-        public ResettingSilos(RailDbContext railDbContext)
+        public ResettingSilosRepository(RailDbContext railDbContext)
         {
             _context = railDbContext;
         }

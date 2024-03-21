@@ -18,7 +18,7 @@ builder.Services.AddDbContext<RailDbContext>(
     });
 
 builder.Services.AddScoped<IMainPageRepository, MainPageRepository>();
-builder.Services.AddScoped<IResettingSilos, ResettingSilos>();
+builder.Services.AddScoped<IResettingSilos, ResettingSilosRepository>();
 
 var app = builder.Build();
 
