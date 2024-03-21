@@ -1,12 +1,12 @@
 ﻿using Aeroblock.DataAccess.Rail.Interface;
-using Aeroblock.DataAccess.Rail.Repositories;
+using AeroblockTestRazorPage.Interface;
 using AeroblockTestRazorPage.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace AeroblockTestRazorPage.Controllers
 {
-    public class ResettingSilosController : Controller
+    public class ResettingSilosController : Controller, IGetModalWindow
     {
         private readonly IResettingSilos _resettingSilos;
 

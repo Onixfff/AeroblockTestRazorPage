@@ -1,11 +1,12 @@
 using Aeroblock.DataAccess.Rail.Interface;
+using AeroblockTestRazorPage.Interface;
 using AeroblockTestRazorPage.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace AeroblockTestRazorPage.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Controller, IGetModalWindow
     {
         private readonly IMainPageRepository _mainPageRepository;
 
