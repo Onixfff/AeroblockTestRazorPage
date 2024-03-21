@@ -1,4 +1,8 @@
-﻿<link rel="stylesheet" href="~/css/ModelWindow.css" asp-append-version="true" />
+﻿<head>
+    <link rel="stylesheet" href="~/css/ModelWindow.css" asp-append-version="true" />
+    <script src="~/js/MainPage.js" asp-append-version="true"></script>
+</head>
+
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -7,12 +11,9 @@
     <div class="panel">
         <div class="panel-header">
             Сортировка
-        </div>
-        <div class="panel-content">
-            <button>Текущий месяц</button>
-            <button class="col-md-3">2</button>
-            <button class=col-1>3</button>
-            <button class=d-md-inline-block>4</button>
+            </div>
+                <select id="enumSelect"></select>
+            </div>
         </div>
     </div>
     
@@ -21,48 +22,22 @@
     <div id="TableMain"></div>
 </body>
 
+
 @section Scripts 
 {
     <script>
-        $(document).ready(function () {
-            $('#TableMain').load("/Home/GetTablePartial")
-            // $.ajax({
-            //     type: "GET",
-            //     url: "@Url.Action("GetName")",
-            //     dataType: "json",
-            //     success: function (result) {
-            //         console.log(result);
-            //     },
-            //     error: function (req, status, error) {
-            //         console.log(status)
-            //     }
-            // });
 
-            // $.ajax({
-            //     type: "POST",
-            //     url: "@Url.Action("PostName")",
-            //     dataType: "json",
-            //     data: { name: "Jannick" },
-            //     success: function (result) {
-            //         console.log(result);
-            //     },
-            //     error: function (req, status, error) {
-            //         console.log(status)
-            //     }
-            // });
-        })
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var panelHeaders = document.querySelectorAll('.panel-header');
-
-            panelHeaders.forEach(function (panelHeader) {
-                panelHeader.addEventListener('click', function () {
-                    var panelContent = this.nextElementSibling;
-                    panelContent.classList.toggle('hidden');
-                });
-            });
-        });
+        // $.ajax({
+        //     type: "POST",
+        //     url: "@Url.Action("PostName")",
+        //     dataType: "json",
+        //     data: { name: "Jannick" },
+        //     success: function (result) {
+        //         console.log(result);
+        //     },
+        //     error: function (req, status, error) {
+        //         console.log(status)
+        //     }
+        // });
     </script>
 }

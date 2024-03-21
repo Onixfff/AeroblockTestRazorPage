@@ -6,8 +6,26 @@ using System.Diagnostics;
 
 namespace AeroblockTestRazorPage.Controllers
 {
+    public enum StateÑarriage
+    {
+        OnTheStation,
+        OnTheWay,
+        Unloaded,
+        ForUnloading,
+        All
+    }
+
     public class HomeController : Controller, IGetModalWindow
     {
+        private Dictionary<StateÑarriage, string> ruStateCarriage = new Dictionary<StateÑarriage, string> 
+        {
+            {StateÑarriage.All, "Âñå" },
+            {StateÑarriage.OnTheStation, "Íà ñòàíöèè" },
+            {StateÑarriage.OnTheWay, "Â ïóòè" },
+            {StateÑarriage.Unloaded, "Ğàçãğóæåííûå" },
+            {StateÑarriage.ForUnloading, "Íà ğàçãğóçêå" }
+        };
+
         private readonly IMainPageRepository _mainPageRepository;
 
         private readonly ILogger<HomeController> _logger;
@@ -30,16 +48,31 @@ namespace AeroblockTestRazorPage.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetName()
+        public JsonResult GetStateÑarriage()
         {
-            var names = new string[3]
+            try
             {
-                "Clara",
-                "marc",
-                "Judy"
-            };
+                var enumValues = Enum.GetValues(typeof(StateÑarriage));
+                var enumList = new List<string>();
 
-            return new JsonResult(Ok(names));
+                foreach (var ru in ruStateCarriage)
+                {
+                    foreach (StateÑarriage item in enumValues)
+                    {
+                        if(ru.Key == item)
+                        {
+                            enumList.Add(ru.Value);
+                        }
+                    }
+                }
+
+                return new JsonResult(enumList);
+            }
+            catch (Exception ex)
+            {
+                // Îáğàáîòêà îøèáêè, åñëè ÷òî-òî ïîøëî íå òàê
+                return new JsonResult(new { status = "error", message = ex.Message });
+            }
         }
 
         [HttpPost]
@@ -51,8 +84,6 @@ namespace AeroblockTestRazorPage.Controllers
         public IActionResult RedirectToOtherController()
         {
             return Json(new { redirectUrl = Url.Action("Index", "ResettingSilos") });
-            return RedirectToAction("Index", "ResettingSilos");
-            return RedirectToRoute(new {Controller = "ResettingSilos", action = "Index" });
         }
 
         public IActionResult GetModalWindow()
