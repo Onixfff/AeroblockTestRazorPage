@@ -4,14 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Aeroblock.DataAccess.Rail.Repositories
 {
-    public class ResettingSilosRepository : IResettingSilos
+    public class ResettingSilosRepository(RailDbContext railDbContext) : IResettingSilos
     {
-        private readonly RailDbContext _context;
-
-        public ResettingSilosRepository(RailDbContext railDbContext)
-        {
-            _context = railDbContext;
-        }
+        private readonly RailDbContext _context = railDbContext;
 
         public async Task<List<ZeroingSilosEntity>> GetDataAsync()
         {
