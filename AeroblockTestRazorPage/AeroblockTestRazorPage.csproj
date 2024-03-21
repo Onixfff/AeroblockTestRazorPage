@@ -28,4 +28,8 @@
     <ProjectReference Include="..\Aeroblock.DataAccess.Rail\Aeroblock.DataAccess.Rail.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\MoveSilos\" />
+  </ItemGroup>
+
 </Project>
