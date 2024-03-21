@@ -4,6 +4,6 @@ namespace Aeroblock.DataAccess.Rail.Interface
 {
     internal interface IMoveSilo
     {
-        public Task<List<SiloBalanceEntity>> GetAsync();
+        public Task<List<MoveSiloEntity>> GetAsync();
     }
 }
