@@ -1,6 +1,5 @@
 ﻿<head>
     <link rel="stylesheet" href="~/css/ModelWindow.css" asp-append-version="true" />
-    <script src="~/js/MainPage.js" asp-append-version="true"></script>
 </head>
 
 @{
@@ -12,6 +11,7 @@
         <div class="panel-header">
             Сортировка
             </div>
+            <label>Вагоны</label>
                 <select id="enumSelect"></select>
             </div>
         </div>
@@ -23,9 +23,33 @@
 </body>
 
 
+
 @section Scripts 
 {
     <script>
+
+        $(document).ready(function () {
+            $('#TableMain').load("/Home/GetTablePartial")
+
+            $.ajax({
+                url: '/Home/GetStateСarriage', // Замените на ваш адрес контроллера
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    if (data && data.length > 0) {
+                        var enumSelect = $('#enumSelect');
+                        $.each(data, function (index, value) {
+                            enumSelect.append('<option value="' + value + '">' + value + '</option>');
+                        });
+                    } else {
+                        console.error("Ошибка: Нет данных для отображения.");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Ошибка при выполнении запроса:", status, error);
+                }
+            });
+        });
 
         // $.ajax({
         //     type: "POST",
